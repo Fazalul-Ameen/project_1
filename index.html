@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Health Metrics Calculator</title>
+</head>
+
+<body>
+    <nav>
+        <h1 class="title">Calc-Health</h1>
+        <h3 class="title">A health calculator</h3>
+        <ul>
+            <li><a href="#bmi-section">Body-Mass Index</a></li>
+            <li><a href="#body-fat-section">Body Fat Percentage</a></li>
+            <li><a href="#whr-section">Waist-to-Hip Ratio</a></li>
+            <li><a href="#BMR-section">Basal Metabolic rate</a></li>
+        </ul>
+    </nav>
+    <div class="calculator-container">
+        <!-- BMI Calculator Section -->
+        <section id="bmi-section">
+            <h2>Body-Mass Index Calculator</h2>
+            <form>
+                <label for="bmi-weight">Weight (lbs)</label>
+                <input type="number" id="bmi-weight" placeholder="Enter your weight" required><br>
+                <label for="bmi-height">Height</label>
+                <input type="number" id="bmi-height" placeholder="Enter your height" required>
+                <br>
+                <button onclick="calculateBMI()">Calculate BMI</button>
+            </form>
+            <div id="bmi-result"></div>
+        </section>
+
+        <!-- Body Fat Percentage Calculator Section -->
+        <section id="body-fat-section">
+            <h2>Body Fat Percentage Calculator</h2>
+            <form>
+                <label for="gender">Gender:</label>
+                <select id="body-fat-gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <br>
+                <label for="body-fat-waist">Waist Circumference (inches):</label>
+                <input type="number" id="body-fat-waist" placeholder="Enter your waist circumference" required>
+                <br>
+                <label for="body-fat-hip">Hip Circumference (inches):</label>
+                <input type="number" id="body-fat-hip" placeholder="Enter your hip circumference" required>
+                <br>
+                <label for="body-fat-weight">Weight (lbs):</label>
+                <input type="number" id="body-fat-weight" placeholder="Enter your weight" required>
+                <br>
+                <button onclick="calculateBodyFat()">Calculate Body Fat Percentage</button>
+            </form>
+            <div id="body-fat-result"></div>
+        </section>
+
+        <!-- Waist-to-Hip Ratio Calculator Section -->
+        <section id="whr-section">
+            <h2>Waist-to-Hip Ratio Calculator</h2>
+            <form>
+                <label for="whr-weight">Weight (lbs)</label>
+                <input type="number" id="whr-weight" placeholder="Enter your weight" required><br>
+                <label for="whr-height">Height</label>
+                <input type="number" id="whr-height" placeholder="Enter your height" required>
+                <br>
+                <button onclick="calculateWHRatio()">Calculate Waist-to-Hip Ratio</button>
+            </form>
+            <div id="whr-result"></div>
+        </section>
+
+        <!-- BMR Calculator Section -->
+        <section id="BMR-section">
+            <h2>Basal Metabolic Rate Calculator</h2>
+            <form>
+                <label for="bmr-weight">Weight (lbs)</label>
+                <input type="number" id="bmr-weight" placeholder="Enter your weight" required><br>
+                <label for="bmr-height">Height</label>
+                <input type="number" id="bmr-height" placeholder="Enter your height" required>
+                <br>
+                <button onclick="calculateBMR()">Calculate BMR</button>
+            </form>
+            <div id="bmr-result"></div>
+        </section>
+
+        <!-- Loader -->
+        <div class="loader" id="loader">
+            <div class="loader-box"></div>
+        </div>
+    </div>
+    <script defer src="script.js"></script>
+</body>
+
+</html>
